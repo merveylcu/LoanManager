@@ -1,10 +1,19 @@
 plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
     namespace = "com.merveylcu.core.theme"
+
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.versions.kotlin.get()
+    }
 }
 
 dependencies {

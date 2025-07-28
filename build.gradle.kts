@@ -28,7 +28,7 @@ subprojects {
             }
 
             composeOptions {
-                kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
+                kotlinCompilerExtensionVersion = libs.versions.kotlin.get()
             }
         }
     }
@@ -47,7 +47,7 @@ subprojects {
             }
 
             composeOptions {
-                kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
+                kotlinCompilerExtensionVersion = libs.versions.kotlin.get()
             }
         }
     }
