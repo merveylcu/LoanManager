@@ -3,13 +3,25 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.dagger.hilt)
+    alias(libs.plugins.kotlin.compose)
+    id("kotlin-parcelize")
 }
 
 android {
     namespace = "com.merveylcu.core.navigation"
+
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.versions.kotlin.get()
+    }
 }
 
 dependencies {
+
+    implementation(project(":core:common"))
 
     // Navigation
     implementation(libs.navigation.compose)

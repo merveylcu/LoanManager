@@ -6,7 +6,6 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
-
 android {
     namespace = "com.merveylcu.loanmanager"
     compileSdk = 36
