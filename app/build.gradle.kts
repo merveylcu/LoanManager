@@ -49,15 +49,11 @@ kotlin {
 
 dependencies {
 
-    implementation(project(":core:common"))
-    implementation(project(":core:theme"))
-    implementation(project(":core:navigation"))
-    implementation(project(":core:strings"))
+    implementation(project(":core"))
     implementation(project(":component"))
 
-    implementation(project(":feature:loan:data"))
-    implementation(project(":feature:loan:presentation"))
-    implementation(project(":feature:login:presentation"))
+    implementation(project(":feature:loan"))
+    implementation(project(":feature:login"))
 
     // Core
     implementation(libs.androidx.core.ktx)
@@ -84,12 +80,4 @@ dependencies {
     // Coroutines
     implementation(libs.coroutines.core)
     implementation(libs.coroutines.android)
-
-    // Test
-    testImplementation(libs.junit)
-    testImplementation(libs.mockk)
-    testImplementation(libs.coroutines.test)
-    testImplementation(libs.turbine)
-    androidTestImplementation(libs.junit.ext)
-    androidTestImplementation(libs.espresso.core)
 }

@@ -7,4 +7,9 @@ android {
     namespace = "com.merveylcu.core"
 }
 
-dependencies {}
+dependencies {
+    api(project(":core:common"))
+    api(project(":core:theme"))
+    api(project(":core:navigation"))
+    api(project(":core:strings"))
+}

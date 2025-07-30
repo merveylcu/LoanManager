@@ -15,9 +15,6 @@ dependencies {
     implementation(libs.coroutines.core)
     implementation(libs.coroutines.android)
 
-    // SharedPreferences (Encrypted)
-    implementation(libs.security.crypto)
-
     // Hilt DI
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation)

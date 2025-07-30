@@ -7,4 +7,8 @@ android {
     namespace = "com.merveylcu.feature.loan"
 }
 
-dependencies {}
+dependencies {
+    implementation(project(":feature:loan:data"))
+    implementation(project(":feature:loan:domain"))
+    api(project(":feature:loan:presentation"))
+}

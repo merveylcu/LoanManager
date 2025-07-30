@@ -19,7 +19,6 @@ activity-compose = "1.10.1"
 core-ktx = "1.16.0"
 appcompat = "1.7.1"
 jvm = "17"
-material = "1.12.0"
 
 [libraries]
 
@@ -62,7 +61,6 @@ junit = { module = "junit:junit", version.ref = "junit" }
 junit-ext = { module = "androidx.test.ext:junit", version.ref = "junit-ext" }
 espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso" }
 turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -71,3 +69,4 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlin-parcelize = { id = "kotlin-parcelize" }
