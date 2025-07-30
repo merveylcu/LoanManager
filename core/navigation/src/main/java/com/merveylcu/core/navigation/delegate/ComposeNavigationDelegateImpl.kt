@@ -93,10 +93,22 @@ class ComposeNavigationDelegateImpl : ComposeNavigationDelegate {
             bundle.putParcelable(SCREEN_ARGS_KEY, args)
         }
 
+        val finalNavOptions = if (formation.clearBackStack) {
+            navOptions {
+                popUpTo(0) { inclusive = true }
+                launchSingleTop = true
+            }
+        } else {
+            navOptions ?: navOptions {
+                launchSingleTop = true
+                restoreState = true
+            }
+        }
+
         navHostController.navigate(
             route = formation.screen.route,
             args = bundle,
-            navOptions = navOptions
+            navOptions = finalNavOptions
         )
     }
 

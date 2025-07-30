@@ -11,7 +11,8 @@ internal class LoanNavigationImpl @Inject constructor(
 
     override fun navigateToLoans() = composeNavManager.navigate(
         navigateFormation = NavigateFormation.OpenScreen(
-            screen = LoanRouter.Loans
+            screen = LoanRouter.Loans,
+            clearBackStack = true
         )
     )
 

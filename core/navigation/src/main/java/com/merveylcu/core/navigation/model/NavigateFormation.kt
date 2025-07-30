@@ -6,7 +6,8 @@ sealed interface NavigateFormation {
 
     data class OpenScreen(
         val screen: ComposeRouter,
-        val args: Parcelable? = null
+        val args: Parcelable? = null,
+        val clearBackStack: Boolean = false
     ) : NavigateFormation
 
     data class NavigateUp(val resultArgs: Parcelable? = null) : NavigateFormation

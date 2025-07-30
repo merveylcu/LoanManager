@@ -11,7 +11,8 @@ internal class LoginNavigationImpl @Inject constructor(
 
     override fun navigateToLogin() = composeNavManager.navigate(
         navigateFormation = NavigateFormation.OpenScreen(
-            screen = LoginRouter.Login
+            screen = LoginRouter.Login,
+            clearBackStack = true
         )
     )
 
