@@ -14,7 +14,10 @@ data class AppDimensions(
     val spacingVertical: Dp = 12.dp,
     val spacingHorizontal: Dp = 12.dp,
     val iconSize: Dp = 24.dp,
-    val elevation: Dp = 2.dp
+    val elevation: Dp = 2.dp,
+    val textFieldHeight: Dp = 58.dp,
+    val buttonHeight: Dp = 52.dp,
+    val borderWidth: Dp = 0.6.dp
 )
 
 val CompactDimensions = AppDimensions(
@@ -27,7 +30,10 @@ val CompactDimensions = AppDimensions(
     spacingVertical = 8.dp,
     spacingHorizontal = 8.dp,
     iconSize = 20.dp,
-    elevation = 1.dp
+    elevation = 1.dp,
+    textFieldHeight = 42.dp,
+    buttonHeight = 36.dp,
+    borderWidth = 0.3.dp
 )
 
 val RegularDimensions = AppDimensions()

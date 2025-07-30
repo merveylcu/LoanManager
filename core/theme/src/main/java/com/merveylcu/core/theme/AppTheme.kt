@@ -1,7 +1,7 @@
 package com.merveylcu.core.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.materialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
@@ -16,6 +16,7 @@ fun AppTheme(
     val colors = if (useDarkTheme) DarkColors else LightColors
     val dimensions = if (isCompact) CompactDimensions else RegularDimensions
     val spacing = if (isCompact) CompactSpacing else DefaultSpacing
+    val textSizes = if (isCompact) CompactTextSizes else RegularTextSizes
 
     val materialColorScheme = if (useDarkTheme) {
         darkColorScheme(
@@ -36,6 +37,7 @@ fun AppTheme(
         LocalAppDimensions provides dimensions,
         LocalAppSpacing provides spacing,
         LocalAppShapes provides AppShapes,
+        LocalAppTextSizes provides textSizes,
         LocalAppTypography provides AppTypography
     ) {
         MaterialTheme(
