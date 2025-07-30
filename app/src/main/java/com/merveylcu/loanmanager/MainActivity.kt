@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.runtime.LaunchedEffect
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.merveylcu.core.common.sharedpref.LoanPreferences
@@ -12,7 +13,6 @@ import com.merveylcu.core.navigation.ComposeNavManager
 import com.merveylcu.core.navigation.NavGraphProvider
 import com.merveylcu.core.navigation.delegate.ComposeNavigationDelegate
 import com.merveylcu.core.navigation.delegate.ComposeNavigationDelegateImpl
-import com.merveylcu.core.navigation.registerScreen
 import com.merveylcu.core.theme.AppTheme
 import com.merveylcu.feature.loan.presentation.navigation.LoanRouter
 import com.merveylcu.feature.login.presentation.navigation.LoginRouter
@@ -54,12 +54,14 @@ class MainActivity : ComponentActivity(),
                     }
                 }
 
-                attachNavigationDelegate(
-                    activity = this,
-                    hostScreen = LoginRouter.Login,
-                    composeNavManager = composeNavManager.get(),
-                    navHostController = navController
-                )
+                LaunchedEffect(Unit) {
+                    attachNavigationDelegate(
+                        activity = this@MainActivity,
+                        hostScreen = LoginRouter.Login,
+                        composeNavManager = composeNavManager.get(),
+                        navHostController = navController
+                    )
+                }
             }
         }
     }

@@ -14,4 +14,8 @@ internal class LoanNavigationImpl @Inject constructor(
             screen = LoanRouter.Loans
         )
     )
+
+    override fun navigateUp() = composeNavManager.navigate(
+        navigateFormation = NavigateFormation.NavigateUp()
+    )
 }

@@ -14,4 +14,8 @@ internal class LoginNavigationImpl @Inject constructor(
             screen = LoginRouter.Login
         )
     )
+
+    override fun navigateUp() = composeNavManager.navigate(
+        navigateFormation = NavigateFormation.NavigateUp()
+    )
 }
