@@ -38,11 +38,9 @@ fun AppTheme(
         LocalAppSpacing provides spacing,
         LocalAppShapes provides AppShapes,
         LocalAppTextSizes provides textSizes,
-        LocalAppTypography provides AppTypography
     ) {
         MaterialTheme(
             colorScheme = materialColorScheme,
-            typography = AppTypography,
             shapes = AppShapes,
             content = content
         )

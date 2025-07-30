@@ -18,6 +18,7 @@ import androidx.lifecycle.compose.LifecycleEventEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.merveylcu.component.button.LoanButton
 import com.merveylcu.component.text.LoanText
+import com.merveylcu.core.strings.loan.LocalLoanStrings
 import com.merveylcu.core.theme.LocalAppDimensions
 import com.merveylcu.core.theme.LocalAppSpacing
 import com.merveylcu.core.theme.LocalAppTextSizes
@@ -55,7 +56,7 @@ internal fun LoanScreen(
             Spacer(modifier = Modifier.height(LocalAppSpacing.current.xl))
 
             LoanText(
-                text = "Loans",
+                text = LocalLoanStrings.current.loansPageTitle,
                 fontSize = LocalAppTextSizes.current.extraLarge
             )
         }
@@ -73,7 +74,7 @@ internal fun LoanScreen(
             LoanButton(
                 onClick = actions::onLogout
             ) {
-                LoanText(text = "Logout")
+                LoanText(text = LocalLoanStrings.current.logout)
             }
         }
     }

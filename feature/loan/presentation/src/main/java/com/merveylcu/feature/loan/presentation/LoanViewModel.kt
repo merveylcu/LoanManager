@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class LoanViewModel @Inject constructor(
+internal class LoanViewModel @Inject constructor(
     private val getLoans: GetLoansUseCase,
     private val loanPreferences: LoanPreferences,
     private val loginNavigation: LoginNavigation

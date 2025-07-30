@@ -3,7 +3,7 @@ package com.merveylcu.feature.loan.data
 import com.merveylcu.feature.loan.domain.model.Loan
 import com.merveylcu.feature.loan.domain.model.LoanType
 
-object DummyLoanDataSource {
+internal object DummyLoanDataSource {
 
     val loans = listOf(
         Loan("1", LoanType.PERSONAL, 10000.0),

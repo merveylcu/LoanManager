@@ -15,7 +15,7 @@ import dagger.hilt.components.SingletonComponent
 
 @Module
 @InstallIn(SingletonComponent::class)
-object LoanModule {
+internal object LoanModule {
 
     @Provides
     fun provideLoanRepository(): LoanRepository = LoanRepositoryImpl()

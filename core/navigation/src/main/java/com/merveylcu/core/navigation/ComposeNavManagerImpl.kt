@@ -17,7 +17,7 @@ import javax.inject.Singleton
 import kotlin.coroutines.CoroutineContext
 
 @Singleton
-class ComposeNavManagerImpl @Inject constructor(
+internal class ComposeNavManagerImpl @Inject constructor(
     @Dispatchers.Main dispatcher: CoroutineDispatcher
 ) : CoroutineScope, ComposeNavManager {
 

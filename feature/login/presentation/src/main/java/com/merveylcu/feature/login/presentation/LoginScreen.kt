@@ -24,6 +24,7 @@ import com.merveylcu.component.textfield.LoanTextField
 import com.merveylcu.component.textfield.LoanTextFieldValue
 import com.merveylcu.component.textfield.validator.EmailValidator
 import com.merveylcu.component.textfield.validator.PasswordValidator
+import com.merveylcu.core.strings.login.LocalLoginStrings
 import com.merveylcu.core.theme.LocalAppDimensions
 import com.merveylcu.core.theme.LocalAppSpacing
 import com.merveylcu.core.theme.LocalAppTextSizes
@@ -67,7 +68,7 @@ internal fun LoginScreen(
         Spacer(modifier = Modifier.height(LocalAppSpacing.current.xl))
 
         LoanText(
-            text = "Welcome",
+            text = LocalLoginStrings.current.loginPageTitle,
             fontSize = LocalAppTextSizes.current.extraLarge
         )
 
@@ -76,7 +77,7 @@ internal fun LoginScreen(
             onValueChange = {
                 actions.onEmailChanged(value = it)
             },
-            label = "Email",
+            label = LocalLoginStrings.current.loginEmail,
             keyboardOptions = KeyboardOptions.Default.copy(
                 keyboardType = KeyboardType.Email
             ),
@@ -88,7 +89,7 @@ internal fun LoginScreen(
             onValueChange = {
                 actions.onPasswordChanged(value = it)
             },
-            label = "Password",
+            label = LocalLoginStrings.current.loginPassword,
             visualTransformation = PasswordVisualTransformation(),
             keyboardOptions = KeyboardOptions.Default.copy(
                 keyboardType = KeyboardType.NumberPassword
@@ -102,7 +103,7 @@ internal fun LoginScreen(
             onClick = actions::onLogin,
             enabled = uiState.isLoginButtonEnabled
         ) {
-            LoanText(text = "Login")
+            LoanText(text = LocalLoginStrings.current.loginButton)
         }
     }
 }
