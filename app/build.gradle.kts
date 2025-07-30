@@ -52,6 +52,7 @@ dependencies {
     implementation(project(":core:common"))
     implementation(project(":core:theme"))
     implementation(project(":core:navigation"))
+    implementation(project(":core:strings"))
     implementation(project(":component"))
 
     implementation(project(":feature:loan:data"))

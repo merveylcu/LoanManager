@@ -1,4 +1,9 @@
 <resources>
+    <string name="login_page_title">Welcome</string>
+    <string name="login_email">Email</string>
+    <string name="login_password">Password</string>
+    <string name="login_button">Login</string>
+
     <string name="loans_page_title">Loans</string>
     <string name="loan_type">Loan Type</string>
     <string name="loan_amount">Amount</string>

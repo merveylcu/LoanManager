@@ -13,6 +13,7 @@ import com.merveylcu.core.navigation.ComposeNavManager
 import com.merveylcu.core.navigation.NavGraphProvider
 import com.merveylcu.core.navigation.delegate.ComposeNavigationDelegate
 import com.merveylcu.core.navigation.delegate.ComposeNavigationDelegateImpl
+import com.merveylcu.core.strings.ProvideAppStrings
 import com.merveylcu.core.theme.AppTheme
 import com.merveylcu.feature.loan.presentation.navigation.LoanRouter
 import com.merveylcu.feature.login.presentation.navigation.LoginRouter
@@ -43,24 +44,26 @@ class MainActivity : ComponentActivity(),
         enableEdgeToEdge()
         setContent {
             AppTheme {
-                val navController = rememberNavController()
+                ProvideAppStrings(context = this) {
+                    val navController = rememberNavController()
 
-                NavHost(
-                    navController = navController,
-                    startDestination = if (isLoggedIn) LoanRouter.Loans.route else LoginRouter.Login.route
-                ) {
-                    for (provider in navGraphProvider.get()) {
-                        provider.build(this, navController)
+                    NavHost(
+                        navController = navController,
+                        startDestination = if (isLoggedIn) LoanRouter.Loans.route else LoginRouter.Login.route
+                    ) {
+                        for (provider in navGraphProvider.get()) {
+                            provider.build(this, navController)
+                        }
                     }
-                }
 
-                LaunchedEffect(Unit) {
-                    attachNavigationDelegate(
-                        activity = this@MainActivity,
-                        hostScreen = LoginRouter.Login,
-                        composeNavManager = composeNavManager.get(),
-                        navHostController = navController
-                    )
+                    LaunchedEffect(Unit) {
+                        attachNavigationDelegate(
+                            activity = this@MainActivity,
+                            hostScreen = LoginRouter.Login,
+                            composeNavManager = composeNavManager.get(),
+                            navHostController = navController
+                        )
+                    }
                 }
             }
         }
