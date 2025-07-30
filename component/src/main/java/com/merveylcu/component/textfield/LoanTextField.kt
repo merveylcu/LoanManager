@@ -37,11 +37,12 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.dp
 import com.merveylcu.component.text.LoanText
+import com.merveylcu.component.textfield.validator.LoanTextFieldStringValidator
 import com.merveylcu.core.theme.LocalAppColors
 import com.merveylcu.core.theme.LocalAppDimensions
 import com.merveylcu.core.theme.LocalAppTextSizes
@@ -165,7 +166,7 @@ fun LoanTextField(
                         .fillMaxWidth()
                         .defaultMinSize(minHeight = minHeight)
                         .border(
-                            width = 0.6.dp,
+                            width = LocalAppDimensions.current.borderWidth,
                             color = borderColor.value,
                             shape = cornerShape
 
@@ -184,7 +185,7 @@ fun LoanTextField(
                     },
                     enabled = enabled,
                     readOnly = readOnly,
-                    textStyle = textStyle.copy(
+                    textStyle = TextStyle(
                         fontSize = LocalAppTextSizes.current.medium,
                         fontWeight = FontWeight.Normal,
                         color = LocalAppColors.current.primary

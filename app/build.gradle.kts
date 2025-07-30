@@ -54,8 +54,9 @@ dependencies {
     implementation(project(":core:navigation"))
     implementation(project(":component"))
 
-    implementation(project(":feature:login:presentation"))
+    implementation(project(":feature:loan:data"))
     implementation(project(":feature:loan:presentation"))
+    implementation(project(":feature:login"))
 
     // Core
     implementation(libs.androidx.core.ktx)

@@ -1,7 +1,7 @@
 package com.merveylcu.component.textfield
 
 import androidx.compose.foundation.text.selection.TextSelectionColors
-import androidx.compose.material3.materialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.TextFieldColors
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable

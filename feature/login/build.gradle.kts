@@ -7,4 +7,8 @@ android {
     namespace = "com.merveylcu.feature.login"
 }
 
-dependencies {}
+dependencies {
+    implementation(project(":feature:login:data"))
+    implementation(project(":feature:login:domain"))
+    api(project(":feature:login:presentation"))
+}

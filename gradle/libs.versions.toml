@@ -9,7 +9,7 @@ hilt-navigation = "1.2.0"
 navigation = "2.9.2"
 lifecycle = "2.9.2"
 coroutines = "1.10.2"
-security = "1.1.0-beta01"
+security-crypto = "1.1.0-beta01"
 mockk = "1.14.5"
 turbine = "1.2.1"
 junit = "4.13.2"
@@ -52,8 +52,8 @@ coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", ve
 coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
 coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 
-# SharedPreferences (Encrypted)
-security-crypto = { module = "androidx.security:security-crypto", version.ref = "security" }
+# SharedPreferences
+security-crypto = { group = "androidx.security", name = "security-crypto", version.ref = "security-crypto" }
 
 # Test
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }

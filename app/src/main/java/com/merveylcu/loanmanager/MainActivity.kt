@@ -6,6 +6,8 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import com.merveylcu.core.common.sharedpref.LoanPreferences
+import com.merveylcu.core.common.sharedpref.LoanPreferencesKey
 import com.merveylcu.core.navigation.ComposeNavManager
 import com.merveylcu.core.navigation.NavGraphProvider
 import com.merveylcu.core.navigation.delegate.ComposeNavigationDelegate
@@ -22,6 +24,9 @@ class MainActivity : ComponentActivity(),
     ComposeNavigationDelegate by ComposeNavigationDelegateImpl() {
 
     @Inject
+    lateinit var loanPreferences: LoanPreferences
+
+    @Inject
     lateinit var composeNavManager: Lazy<ComposeNavManager>
 
     @Inject
@@ -30,6 +35,10 @@ class MainActivity : ComponentActivity(),
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val isLoggedIn = loanPreferences.getString(LoanPreferencesKey.Email) != null &&
+                loanPreferences.getString(LoanPreferencesKey.Password) != null
+
         enableEdgeToEdge()
         setContent {
             AppTheme {
@@ -37,12 +46,8 @@ class MainActivity : ComponentActivity(),
 
                 NavHost(
                     navController = navController,
-                    startDestination = LoginRouter.Login.route
+                    startDestination = if (isLoggedIn) LoginRouter.Login.route else LoginRouter.Login.route
                 ) {
-                    registerScreen(composeRouter = LoginRouter.Login) { homeBackStackEntry ->
-
-                    }
-
                     for (provider in navGraphProvider.get()) {
                         provider.build(this, navController)
                     }

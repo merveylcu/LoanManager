@@ -10,5 +10,4 @@ sealed interface LoanButtonStyle {
 
     @Stable
     data object Secondary : LoanButtonStyle
-
 }

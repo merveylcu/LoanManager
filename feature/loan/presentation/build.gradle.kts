@@ -20,6 +20,12 @@ android {
 
 dependencies {
 
+    implementation(project(":core:common"))
+    implementation(project(":core:theme"))
+    implementation(project(":core:navigation"))
+    implementation(project(":component"))
+    implementation(project(":feature:loan:domain"))
+
     // Core
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

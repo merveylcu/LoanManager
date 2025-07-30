@@ -20,7 +20,10 @@ android {
 
 dependencies {
 
+    implementation(project(":core:common"))
+    implementation(project(":core:theme"))
     implementation(project(":core:navigation"))
+    implementation(project(":component"))
 
     // Core
     implementation(libs.androidx.core.ktx)

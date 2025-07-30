@@ -14,6 +14,9 @@ dependencies {
     // Lifecycle & ViewModel
     implementation(libs.lifecycle.viewmodel)
 
+    // SharedPreferences
+    implementation(libs.security.crypto)
+
     // Hilt DI
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation)

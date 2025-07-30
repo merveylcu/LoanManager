@@ -1,4 +1,4 @@
-package com.merveylcu.component.textfield
+package com.merveylcu.component.textfield.validator
 
 interface LoanTextFieldValidator<T> {
     val errorMessage: String
