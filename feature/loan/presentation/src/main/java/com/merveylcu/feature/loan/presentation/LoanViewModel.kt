@@ -2,6 +2,7 @@ package com.merveylcu.feature.loan.presentation
 
 import androidx.lifecycle.viewModelScope
 import com.merveylcu.core.common.base.BaseViewModel
+import com.merveylcu.core.common.navigation.LoginNavigation
 import com.merveylcu.core.common.sharedpref.LoanPreferences
 import com.merveylcu.feature.loan.domain.GetLoansUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -15,7 +16,8 @@ import javax.inject.Inject
 @HiltViewModel
 class LoanViewModel @Inject constructor(
     private val getLoans: GetLoansUseCase,
-    private val loanPreferences: LoanPreferences
+    private val loanPreferences: LoanPreferences,
+    private val loginNavigation: LoginNavigation
 ) : BaseViewModel(), LoanActions {
 
     private val _uiState = MutableStateFlow(LoanUiState())
@@ -35,5 +37,6 @@ class LoanViewModel @Inject constructor(
 
     override fun onLogout() {
         loanPreferences.clear()
+        loginNavigation.navigateToLogin()
     }
 }

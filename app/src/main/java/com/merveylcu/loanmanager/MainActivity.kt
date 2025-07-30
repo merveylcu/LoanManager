@@ -14,6 +14,7 @@ import com.merveylcu.core.navigation.delegate.ComposeNavigationDelegate
 import com.merveylcu.core.navigation.delegate.ComposeNavigationDelegateImpl
 import com.merveylcu.core.navigation.registerScreen
 import com.merveylcu.core.theme.AppTheme
+import com.merveylcu.feature.loan.presentation.navigation.LoanRouter
 import com.merveylcu.feature.login.presentation.navigation.LoginRouter
 import dagger.Lazy
 import dagger.hilt.android.AndroidEntryPoint
@@ -46,7 +47,7 @@ class MainActivity : ComponentActivity(),
 
                 NavHost(
                     navController = navController,
-                    startDestination = if (isLoggedIn) LoginRouter.Login.route else LoginRouter.Login.route
+                    startDestination = if (isLoggedIn) LoanRouter.Loans.route else LoginRouter.Login.route
                 ) {
                     for (provider in navGraphProvider.get()) {
                         provider.build(this, navController)

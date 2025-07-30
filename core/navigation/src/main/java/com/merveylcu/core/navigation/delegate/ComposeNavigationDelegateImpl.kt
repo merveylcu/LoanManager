@@ -24,9 +24,7 @@ import kotlinx.coroutines.launch
 class ComposeNavigationDelegateImpl : ComposeNavigationDelegate {
 
     private var navigationJob: Job? = null
-    private var hostScreen: ComposeRouter = ComposeScreenRouter(
-        route = "login"
-    )
+    private var hostScreen: ComposeRouter = ComposeScreenRouter(route = "loans")
 
     override fun attachNavigationDelegate(
         activity: ComponentActivity,

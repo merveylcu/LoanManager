@@ -56,7 +56,7 @@ dependencies {
 
     implementation(project(":feature:loan:data"))
     implementation(project(":feature:loan:presentation"))
-    implementation(project(":feature:login"))
+    implementation(project(":feature:login:presentation"))
 
     // Core
     implementation(libs.androidx.core.ktx)

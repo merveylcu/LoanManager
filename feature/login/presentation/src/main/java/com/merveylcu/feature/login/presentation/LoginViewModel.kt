@@ -2,6 +2,7 @@ package com.merveylcu.feature.login.presentation
 
 import com.merveylcu.component.textfield.LoanTextFieldValue
 import com.merveylcu.core.common.base.BaseViewModel
+import com.merveylcu.core.common.navigation.LoanNavigation
 import com.merveylcu.core.common.sharedpref.LoanPreferences
 import com.merveylcu.core.common.sharedpref.LoanPreferencesKey
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -13,7 +14,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 internal class LoginViewModel @Inject constructor(
-    private val loanPreferences: LoanPreferences
+    private val loanPreferences: LoanPreferences,
+    private val loanNavigation: LoanNavigation
 ) : BaseViewModel(), LoginActions {
 
     private val _uiState = MutableStateFlow(LoginUiState())
@@ -38,7 +40,7 @@ internal class LoginViewModel @Inject constructor(
             loanPreferences.putString(LoanPreferencesKey.Email, email.text)
             loanPreferences.putString(LoanPreferencesKey.Password, password.text)
         }
-        // navigate
+        loanNavigation.navigateToLoans()
     }
 
     private fun updateLoginButtonIsEnabled() {

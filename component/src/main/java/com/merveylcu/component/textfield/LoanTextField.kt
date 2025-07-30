@@ -276,8 +276,8 @@ private fun LoanTextFieldErrorHelper(
     componentColor: Color = LocalAppColors.current.error
 ) {
     Row(
-        modifier = Modifier.padding(top = LocalAppDimensions.current.paddingLarge),
-        verticalAlignment = Alignment.Top,
+        modifier = Modifier.padding(top = LocalAppDimensions.current.paddingMedium),
+        verticalAlignment = Alignment.Bottom,
         horizontalArrangement = Arrangement.spacedBy(LocalAppDimensions.current.paddingMedium)
     ) {
         Icon(
