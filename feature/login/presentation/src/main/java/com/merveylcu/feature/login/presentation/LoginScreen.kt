@@ -91,7 +91,7 @@ internal fun LoginScreen(
             label = "Password",
             visualTransformation = PasswordVisualTransformation(),
             keyboardOptions = KeyboardOptions.Default.copy(
-                keyboardType = KeyboardType.Password
+                keyboardType = KeyboardType.NumberPassword
             ),
             validators = passwordValidators
         )

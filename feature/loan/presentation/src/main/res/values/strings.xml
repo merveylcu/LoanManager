@@ -1,0 +1,8 @@
+<resources>
+    <string name="loans_page_title">Loans</string>
+    <string name="loan_type">Loan Type</string>
+    <string name="loan_amount">Amount</string>
+    <string name="loan_interest_rate">Interest Rate</string>
+    <string name="loan_duration">Duration</string>
+    <string name="logout">Logout</string>
+</resources>
