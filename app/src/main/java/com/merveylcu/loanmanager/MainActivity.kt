@@ -17,7 +17,6 @@ import com.merveylcu.core.strings.ProvideAppStrings
 import com.merveylcu.core.theme.AppTheme
 import com.merveylcu.feature.loan.presentation.navigation.LoanRouter
 import com.merveylcu.feature.login.presentation.navigation.LoginRouter
-import dagger.Lazy
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -29,11 +28,10 @@ class MainActivity : ComponentActivity(),
     lateinit var loanPreferences: LoanPreferences
 
     @Inject
-    lateinit var composeNavManager: Lazy<ComposeNavManager>
+    lateinit var composeNavManager: ComposeNavManager
 
     @Inject
-    @JvmSuppressWildcards
-    lateinit var navGraphProvider: Lazy<Set<NavGraphProvider>>
+    lateinit var navGraphProvider: Set<NavGraphProvider>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,7 +49,7 @@ class MainActivity : ComponentActivity(),
                         navController = navController,
                         startDestination = if (isLoggedIn) LoanRouter.Loans.route else LoginRouter.Login.route
                     ) {
-                        for (provider in navGraphProvider.get()) {
+                        for (provider in navGraphProvider) {
                             provider.build(this, navController)
                         }
                     }
@@ -60,7 +58,7 @@ class MainActivity : ComponentActivity(),
                         attachNavigationDelegate(
                             activity = this@MainActivity,
                             hostScreen = LoginRouter.Login,
-                            composeNavManager = composeNavManager.get(),
+                            composeNavManager = composeNavManager,
                             navHostController = navController
                         )
                     }

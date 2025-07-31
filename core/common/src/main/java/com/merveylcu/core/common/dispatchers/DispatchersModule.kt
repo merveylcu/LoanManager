@@ -12,18 +12,18 @@ import kotlinx.coroutines.Dispatchers
 internal object DispatchersModule {
 
     @Provides
-    @com.merveylcu.core.common.dispatchers.Dispatchers.IO
+    @Dispatchers.IO
     fun provideIODispatcher(): CoroutineDispatcher = Dispatchers.IO
 
     @Provides
-    @com.merveylcu.core.common.dispatchers.Dispatchers.Main
+    @Dispatchers.Main
     fun provideMainDispatcher(): CoroutineDispatcher = Dispatchers.Main
 
     @Provides
-    @com.merveylcu.core.common.dispatchers.Dispatchers.Default
+    @Dispatchers.Default
     fun provideDefaultDispatcher(): CoroutineDispatcher = Dispatchers.Default
 
     @Provides
-    @com.merveylcu.core.common.dispatchers.Dispatchers.Unconfined
+    @Dispatchers.Unconfined
     fun provideUnconfinedDispatcher(): CoroutineDispatcher = Dispatchers.Unconfined
 }

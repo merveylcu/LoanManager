@@ -13,7 +13,7 @@ private const val LOAN_PREFERENCES_NAME = "LoanPreferences"
 
 @Singleton
 internal class LoanPreferencesImpl @Inject constructor(
-    @ApplicationContext private val context: Context
+    @param:ApplicationContext private val context: Context
 ) : LoanPreferences {
 
     private val sharedPreferences: SharedPreferences by lazy {
